@@ -1,0 +1,285 @@
+2013-11-13 16:18:48,360 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 16:18:48,372 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 16:18:56,306 INFO  - Open new channel 
+2013-11-13 16:18:56,311 INFO  - Open new channel 
+2013-11-13 16:18:56,311 INFO  - Open new channel 
+2013-11-13 16:18:56,313 INFO  - Open new channel 
+2013-11-13 16:18:56,314 INFO  - Open new channel 
+2013-11-13 16:18:56,315 INFO  - Open new channel 
+2013-11-13 16:18:56,316 INFO  - Open new channel 
+2013-11-13 16:18:56,317 INFO  - Open new channel 
+2013-11-13 16:18:56,318 INFO  - Open new channel 
+2013-11-13 16:18:56,319 INFO  - Open new channel 
+2013-11-13 16:18:56,322 INFO  - Open new channel 
+2013-11-13 16:18:56,325 INFO  - Open new channel 
+2013-11-13 16:18:56,327 INFO  - Open new channel 
+2013-11-13 16:18:56,329 INFO  - Open new channel 
+2013-11-13 16:18:56,333 INFO  - Open new channel 
+2013-11-13 16:18:56,335 INFO  - Open new channel 
+2013-11-13 16:18:56,337 INFO  - Open new channel 
+2013-11-13 16:18:56,340 INFO  - Open new channel 
+2013-11-13 16:18:56,342 INFO  - Open new channel 
+2013-11-13 16:18:56,343 INFO  - Open new channel 
+2013-11-13 16:18:56,345 INFO  - Open new channel 
+2013-11-13 16:18:56,347 INFO  - Open new channel 
+2013-11-13 16:18:56,350 INFO  - Open new channel 
+2013-11-13 16:18:56,352 INFO  - Open new channel 
+2013-11-13 16:18:56,355 INFO  - Open new channel 
+2013-11-13 16:18:56,357 INFO  - Open new channel 
+2013-11-13 16:18:56,358 INFO  - Open new channel 
+2013-11-13 16:18:56,361 INFO  - Open new channel 
+2013-11-13 16:18:56,363 INFO  - Open new channel 
+2013-11-13 16:18:56,366 INFO  - Open new channel 
+2013-11-13 16:18:56,368 INFO  - Open new channel 
+2013-11-13 16:18:56,370 INFO  - Open new channel 
+2013-11-13 16:18:56,373 INFO  - Open new channel 
+2013-11-13 16:18:56,376 INFO  - Open new channel 
+2013-11-13 16:18:56,378 INFO  - Open new channel 
+2013-11-13 16:18:56,381 INFO  - Open new channel 
+2013-11-13 16:18:56,384 INFO  - Open new channel 
+2013-11-13 16:18:56,387 INFO  - Open new channel 
+2013-11-13 16:18:56,390 INFO  - Open new channel 
+2013-11-13 16:18:56,393 INFO  - Open new channel 
+2013-11-13 16:18:56,396 INFO  - Open new channel 
+2013-11-13 16:18:56,399 INFO  - Open new channel 
+2013-11-13 16:18:56,402 INFO  - Open new channel 
+2013-11-13 16:18:56,405 INFO  - Open new channel 
+2013-11-13 16:18:56,409 INFO  - Open new channel 
+2013-11-13 16:18:56,411 INFO  - Open new channel 
+2013-11-13 16:18:56,415 INFO  - Open new channel 
+2013-11-13 16:18:56,418 INFO  - Open new channel 
+2013-11-13 16:18:56,421 INFO  - Open new channel 
+2013-11-13 16:18:56,424 INFO  - Open new channel 
+2013-11-13 16:18:56,428 INFO  - Open new channel 
+2013-11-13 16:18:56,430 INFO  - Open new channel 
+2013-11-13 16:18:56,433 INFO  - Open new channel 
+2013-11-13 16:18:56,435 INFO  - Open new channel 
+2013-11-13 16:18:56,438 INFO  - Open new channel 
+2013-11-13 16:18:56,441 INFO  - Open new channel 
+2013-11-13 16:18:56,444 INFO  - Open new channel 
+2013-11-13 16:18:56,447 INFO  - Open new channel 
+2013-11-13 16:18:56,450 INFO  - Open new channel 
+2013-11-13 16:18:56,453 INFO  - Open new channel 
+2013-11-13 16:18:56,456 INFO  - Open new channel 
+2013-11-13 16:18:56,460 INFO  - Open new channel 
+2013-11-13 16:18:56,463 INFO  - Open new channel 
+2013-11-13 16:18:56,467 INFO  - Open new channel 
+2013-11-13 16:18:56,470 INFO  - Open new channel 
+2013-11-13 16:18:56,474 INFO  - Open new channel 
+2013-11-13 16:18:56,478 INFO  - Open new channel 
+2013-11-13 16:18:56,482 INFO  - Open new channel 
+2013-11-13 16:18:56,485 INFO  - Open new channel 
+2013-11-13 16:18:56,488 INFO  - Open new channel 
+2013-11-13 16:18:56,492 INFO  - Open new channel 
+2013-11-13 16:18:56,496 INFO  - Open new channel 
+2013-11-13 16:18:56,500 INFO  - Open new channel 
+2013-11-13 16:18:56,509 INFO  - Open new channel 
+2013-11-13 16:18:56,512 INFO  - Open new channel 
+2013-11-13 16:18:56,516 INFO  - Open new channel 
+2013-11-13 16:18:56,519 INFO  - Open new channel 
+2013-11-13 16:18:56,521 INFO  - Open new channel 
+2013-11-13 16:18:56,525 INFO  - Open new channel 
+2013-11-13 16:18:56,528 INFO  - Open new channel 
+2013-11-13 16:18:56,532 INFO  - Open new channel 
+2013-11-13 16:18:56,535 INFO  - Open new channel 
+2013-11-13 16:18:56,539 INFO  - Open new channel 
+2013-11-13 16:18:56,543 INFO  - Open new channel 
+2013-11-13 16:18:56,546 INFO  - Open new channel 
+2013-11-13 16:18:56,550 INFO  - Open new channel 
+2013-11-13 16:18:56,553 INFO  - Open new channel 
+2013-11-13 16:18:56,557 INFO  - Open new channel 
+2013-11-13 16:18:56,560 INFO  - Open new channel 
+2013-11-13 16:18:56,564 INFO  - Open new channel 
+2013-11-13 16:18:56,568 INFO  - Open new channel 
+2013-11-13 16:18:56,571 INFO  - Open new channel 
+2013-11-13 16:18:56,575 INFO  - Open new channel 
+2013-11-13 16:18:56,578 INFO  - Open new channel 
+2013-11-13 16:18:56,582 INFO  - Open new channel 
+2013-11-13 16:18:56,586 INFO  - Open new channel 
+2013-11-13 16:18:56,590 INFO  - Open new channel 
+2013-11-13 16:18:56,594 INFO  - Open new channel 
+2013-11-13 16:18:56,598 INFO  - Open new channel 
+2013-11-13 16:18:56,602 INFO  - Open new channel 
+2013-11-13 16:18:56,606 INFO  - Open new channel 
+2013-11-13 16:18:56,609 INFO  - Open new channel 
+2013-11-13 16:18:56,611 INFO  - Open new channel 
+2013-11-13 16:18:56,614 INFO  - Open new channel 
+2013-11-13 16:18:56,617 INFO  - Open new channel 
+2013-11-13 16:18:56,620 INFO  - Open new channel 
+2013-11-13 16:18:56,624 INFO  - Open new channel 
+2013-11-13 16:18:56,627 INFO  - Open new channel 
+2013-11-13 16:18:56,631 INFO  - Open new channel 
+2013-11-13 16:18:56,634 INFO  - Open new channel 
+2013-11-13 16:18:56,638 INFO  - Open new channel 
+2013-11-13 16:18:56,641 INFO  - Open new channel 
+2013-11-13 16:18:56,645 INFO  - Open new channel 
+2013-11-13 16:18:56,648 INFO  - Open new channel 
+2013-11-13 16:18:56,652 INFO  - Open new channel 
+2013-11-13 16:18:56,655 INFO  - Open new channel 
+2013-11-13 16:18:56,658 INFO  - Open new channel 
+2013-11-13 16:18:56,661 INFO  - Open new channel 
+2013-11-13 16:18:56,668 INFO  - Open new channel 
+2013-11-13 16:18:56,672 INFO  - Open new channel 
+2013-11-13 16:18:56,675 INFO  - Open new channel 
+2013-11-13 16:18:56,678 INFO  - Open new channel 
+2013-11-13 16:18:56,682 INFO  - Open new channel 
+2013-11-13 16:18:56,686 INFO  - Open new channel 
+2013-11-13 16:18:56,690 INFO  - Open new channel 
+2013-11-13 16:18:56,694 INFO  - Open new channel 
+2013-11-13 16:18:56,697 INFO  - Open new channel 
+2013-11-13 16:18:56,701 INFO  - Open new channel 
+2013-11-13 16:18:56,705 INFO  - Open new channel 
+2013-11-13 16:18:56,709 INFO  - Open new channel 
+2013-11-13 16:18:56,712 INFO  - Open new channel 
+2013-11-13 16:18:56,716 INFO  - Open new channel 
+2013-11-13 16:18:56,720 INFO  - Open new channel 
+2013-11-13 16:18:56,723 INFO  - Open new channel 
+2013-11-13 16:18:56,727 INFO  - Open new channel 
+2013-11-13 16:18:56,730 INFO  - Open new channel 
+2013-11-13 16:18:56,733 INFO  - Open new channel 
+2013-11-13 16:18:56,737 INFO  - Open new channel 
+2013-11-13 16:18:56,741 INFO  - Open new channel 
+2013-11-13 16:18:56,745 INFO  - Open new channel 
+2013-11-13 16:18:56,749 INFO  - Open new channel 
+2013-11-13 16:18:56,754 INFO  - Open new channel 
+2013-11-13 16:18:56,758 INFO  - Open new channel 
+2013-11-13 16:18:56,763 INFO  - Open new channel 
+2013-11-13 16:18:56,767 INFO  - Open new channel 
+2013-11-13 16:18:56,770 INFO  - Open new channel 
+2013-11-13 16:18:56,785 INFO  - Open new channel 
+2013-11-13 16:18:56,788 INFO  - Open new channel 
+2013-11-13 16:18:56,791 INFO  - Open new channel 
+2013-11-13 16:18:56,794 INFO  - Open new channel 
+2013-11-13 16:18:56,797 INFO  - Open new channel 
+2013-11-13 16:18:56,800 INFO  - Open new channel 
+2013-11-13 16:18:56,803 INFO  - Open new channel 
+2013-11-13 16:18:56,809 INFO  - Open new channel 
+2013-11-13 16:18:56,812 INFO  - Open new channel 
+2013-11-13 16:18:56,815 INFO  - Open new channel 
+2013-11-13 16:18:56,818 INFO  - Open new channel 
+2013-11-13 16:18:56,821 INFO  - Open new channel 
+2013-11-13 16:18:56,827 INFO  - Open new channel 
+2013-11-13 16:18:56,832 INFO  - Open new channel 
+2013-11-13 16:18:56,835 INFO  - Open new channel 
+2013-11-13 16:18:56,839 INFO  - Open new channel 
+2013-11-13 16:18:56,842 INFO  - Open new channel 
+2013-11-13 16:18:56,847 INFO  - Open new channel 
+2013-11-13 16:18:56,850 INFO  - Open new channel 
+2013-11-13 16:18:56,854 INFO  - Open new channel 
+2013-11-13 16:18:56,873 INFO  - Open new channel 
+2013-11-13 16:18:56,876 INFO  - Open new channel 
+2013-11-13 16:18:56,879 INFO  - Open new channel 
+2013-11-13 16:18:56,883 INFO  - Open new channel 
+2013-11-13 16:18:56,885 INFO  - Open new channel 
+2013-11-13 16:18:56,887 INFO  - Open new channel 
+2013-11-13 16:18:56,890 INFO  - Open new channel 
+2013-11-13 16:18:56,892 INFO  - Open new channel 
+2013-11-13 16:18:56,894 INFO  - Open new channel 
+2013-11-13 16:18:56,897 INFO  - Open new channel 
+2013-11-13 16:18:56,899 INFO  - Open new channel 
+2013-11-13 16:18:56,901 INFO  - Open new channel 
+2013-11-13 16:18:56,904 INFO  - Open new channel 
+2013-11-13 16:18:56,906 INFO  - Open new channel 
+2013-11-13 16:18:56,909 INFO  - Open new channel 
+2013-11-13 16:18:56,911 INFO  - Open new channel 
+2013-11-13 16:18:56,913 INFO  - Open new channel 
+2013-11-13 16:18:56,915 INFO  - Open new channel 
+2013-11-13 16:18:56,917 INFO  - Open new channel 
+2013-11-13 16:18:56,921 INFO  - Open new channel 
+2013-11-13 16:18:56,922 INFO  - Open new channel 
+2013-11-13 16:18:56,924 INFO  - Open new channel 
+2013-11-13 16:18:56,928 INFO  - Open new channel 
+2013-11-13 16:18:56,930 INFO  - Open new channel 
+2013-11-13 16:18:56,934 INFO  - Open new channel 
+2013-11-13 16:18:56,936 INFO  - Open new channel 
+2013-11-13 16:18:56,940 INFO  - Open new channel 
+2013-11-13 16:18:56,943 INFO  - Open new channel 
+2013-11-13 16:18:56,947 INFO  - Open new channel 
+2013-11-13 16:18:56,949 INFO  - Open new channel 
+2013-11-13 16:18:56,953 INFO  - Open new channel 
+2013-11-13 16:18:56,956 INFO  - Open new channel 
+2013-11-13 16:18:56,965 INFO  - Open new channel 
+2013-11-13 16:18:56,966 INFO  - Open new channel 
+2013-11-13 16:18:56,969 INFO  - Open new channel 
+2013-11-13 16:18:56,972 INFO  - Open new channel 
+2013-11-13 16:18:56,974 INFO  - Open new channel 
+2013-11-13 16:18:56,977 INFO  - Open new channel 
+2013-11-13 16:18:56,979 INFO  - Open new channel 
+2013-11-13 16:18:56,983 INFO  - Open new channel 
+2013-11-13 16:18:56,985 INFO  - Open new channel 
+2013-11-13 16:18:56,988 INFO  - Open new channel 
+2013-11-13 16:19:15,700 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 16:19:15,715 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 16:19:16,753 INFO  - Open new channel 
+2013-11-13 16:19:16,755 INFO  - Open new channel 
+2013-11-13 16:19:16,757 INFO  - Open new channel 
+2013-11-13 16:19:16,758 INFO  - Open new channel 
+2013-11-13 16:19:16,759 INFO  - Open new channel 
+2013-11-13 16:20:08,283 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 16:20:08,295 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 16:20:09,567 INFO  - Open new channel 
+2013-11-13 16:20:09,569 INFO  - Open new channel 
+2013-11-13 16:20:09,571 INFO  - Open new channel 
+2013-11-13 16:20:09,572 INFO  - Open new channel 
+2013-11-13 16:20:09,573 INFO  - Open new channel 
+2013-11-13 16:20:36,447 INFO  - There are 3 opened 
+2013-11-13 16:20:36,452 INFO  - Open new channel 
+2013-11-13 16:20:36,453 INFO  - Open new channel 
+2013-11-13 16:20:36,454 INFO  - Open new channel 
+2013-11-13 16:20:36,455 INFO  - Open new channel 
+2013-11-13 16:20:39,732 INFO  - There are 3 opened 
+2013-11-13 16:20:39,732 INFO  - Open new channel 
+2013-11-13 16:20:39,733 INFO  - Open new channel 
+2013-11-13 16:20:39,734 INFO  - Open new channel 
+2013-11-13 16:20:39,734 INFO  - Open new channel 
+2013-11-13 16:48:00,525 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 16:48:00,546 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 16:48:59,463 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 16:48:59,476 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 16:59:09,528 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 16:59:09,540 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:00:54,325 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:00:54,337 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:01:27,014 INFO  - Open new channel 
+2013-11-13 17:01:56,252 INFO  - Open new channel 
+2013-11-13 17:30:36,553 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:30:36,567 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:31:39,511 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:31:39,524 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:32:19,459 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:32:19,471 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:37:01,200 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:37:01,211 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:47:01,970 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:47:01,981 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:47:39,509 INFO  - Open new channel 
+2013-11-13 17:50:08,920 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:50:08,932 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 17:50:29,407 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 17:50:29,425 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:03:13,762 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:03:13,775 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:04:27,176 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:04:27,195 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:05:03,721 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:05:03,737 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:05:31,613 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:05:31,629 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:06:02,529 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:06:02,547 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:06:57,685 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:06:57,706 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:07:39,967 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:07:39,980 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:07:42,724 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:07:42,741 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:08:43,290 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:08:43,303 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:09:09,471 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:09:09,484 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:09:28,723 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:09:28,748 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:09:55,204 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:09:55,220 INFO  - The proxy will listen at my ip for admin clients at port 9091 
+2013-11-13 18:12:58,056 INFO  - The proxy will listen at 127.0.0.1 at port 9090 
+2013-11-13 18:12:58,069 INFO  - The proxy will listen at my ip for admin clients at port 9091 
