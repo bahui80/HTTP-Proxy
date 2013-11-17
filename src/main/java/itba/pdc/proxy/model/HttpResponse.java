@@ -1,8 +1,6 @@
 package itba.pdc.proxy.model;
 
-import itba.pdc.admin.MetricManager;
 import itba.pdc.admin.filter.ManageFilter;
-import itba.pdc.admin.filter.TransformationFilter;
 
 import java.nio.ByteBuffer;
 import java.util.Collections;
@@ -21,6 +19,7 @@ public class HttpResponse {
 	private int[] version;
 	private int content_length = 0;
 	private int currentChunkedSize = 0;
+	private boolean readFromFile = false;
 	private String messageCode;
 	private Integer code;
 	private Integer chunkSize = null;
@@ -145,7 +144,9 @@ public class HttpResponse {
 			ManageFilter.getInstace().doFilters(body);
 		}
 		body.flip();
-		buff.put(body);
+		if (!readFromFile) {
+			buff.put(body);
+		}
 		return buff;
 	}
 
@@ -202,5 +203,13 @@ public class HttpResponse {
 
 	public void removeHeader(String key) {
 		headers.remove(key);
+	}
+
+	public void readFromFile() {
+		readFromFile = true;
+	}
+
+	public boolean isReadableFromFile() {
+		return readFromFile;
 	}
 }

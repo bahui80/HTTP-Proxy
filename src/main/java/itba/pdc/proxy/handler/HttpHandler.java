@@ -6,6 +6,7 @@ import itba.pdc.proxy.data.AttachmentProxy;
 import itba.pdc.proxy.data.ProcessType;
 import itba.pdc.proxy.data.ProxyType;
 import itba.pdc.proxy.lib.GenerateHttpResponse;
+import itba.pdc.proxy.lib.ManageByteBuffer;
 import itba.pdc.proxy.lib.ManageParser;
 import itba.pdc.proxy.lib.ReadingState;
 import itba.pdc.proxy.model.HttpRequest;
@@ -59,6 +60,8 @@ public class HttpHandler implements TCPProtocol {
 		ByteBuffer buf = att.getBuff();
 		if (channel.isOpen() && channel.isConnected()) {
 			final long bytesRead = channel.read(buf);
+			System.out.println("Buff: " + buf);
+			System.out.println("BytesRead: " + bytesRead);
 			if (bytesRead == -1) {
 				if (att.getProcessID().equals(ProcessType.SERVER)) {
 					HttpParserResponse parser = (HttpParserResponse) att
@@ -69,10 +72,13 @@ public class HttpHandler implements TCPProtocol {
 						att.getResponse().setBody(att.getParser().getBuffer());
 						sendMessageToClient(att);
 					}
+				} else {
+					ConnectionManager con = ConnectionManager.getInstance();
+					// we don't care about persistence, we just close it.
+					con.close(channel);
+					//we dont't care about the persistance, we just close it.
+					con.close(att.getOppositeChannel());
 				}
-				StringBuilder builder = new StringBuilder();
-				accessLogger.info(builder.append("Close connection with ")
-						.append(channel.getRemoteAddress()).toString());
 				key.cancel();
 				channel.close();
 			} else if (bytesRead > 0) {
@@ -113,14 +119,27 @@ public class HttpHandler implements TCPProtocol {
 				break;
 			}
 		} while (buf.hasRemaining());
-		if (!buf.hasRemaining()) { // Buffer completely written?
-			// Nothing left, so no longer interested in writes
-			if (att.getProcessID().equals(ProcessType.CLIENT)) {
-				channel.close();
-				key.cancel();
-			} else {
-				key.interestOps(SelectionKey.OP_READ);
+		if (att.getProcessID().equals(ProcessType.CLIENT)) {
+
+			SelectionKey oppositeKey = att.getOppositeKey();
+			if (oppositeKey != null) {
+				AttachmentProxy oppositeAtt = (AttachmentProxy) oppositeKey
+						.attachment();
+				if (oppositeAtt.getResponse().isReadableFromFile()) {
+					ManageByteBuffer.readFromFile(channel, oppositeAtt
+							.getResponse().toString());
+					channel.close();
+					key.cancel();
+					return;
+				}
 			}
+		}
+		// Nothing left, so no longer interested in writes
+		if (att.getProcessID().equals(ProcessType.CLIENT)) {
+			channel.close();
+			key.cancel();
+		} else {
+			key.interestOps(SelectionKey.OP_READ);
 		}
 		buf.compact(); // Make room for more data to be read in
 	}
@@ -135,8 +154,8 @@ public class HttpHandler implements TCPProtocol {
 			SocketChannel oppositeChannel = null;
 			SelectionKey oppositeKey = null;
 			try {
-				 oppositeChannel = ConnectionManager.getInstance().getChannel(
-				 request.getHost(), request.getPort());
+				oppositeChannel = ConnectionManager.getInstance().getChannel(
+						request.getHost(), request.getPort());
 				oppositeChannel.configureBlocking(false);
 			} catch (Exception e) {
 				accessLogger
@@ -174,12 +193,14 @@ public class HttpHandler implements TCPProtocol {
 			oppositeKey.attach(serverAtt);
 			break;
 		case UNFINISHED:
+			att.clearBuffer();
 			key.interestOps(SelectionKey.OP_READ);
 			break;
 		case ERROR:
 			try {
 				sendError(key);
 			} catch (IOException e) {
+				e.printStackTrace();
 			}
 			break;
 		}
@@ -212,12 +233,13 @@ public class HttpHandler implements TCPProtocol {
 		case FINISHED:
 			MetricManager.getInstance().addStatusCode(
 					att.getResponse().getStatusCode());
-			 ConnectionManager.getInstance().close(
-			 otherAtt.getRequest().getHost(),
-			 (SocketChannel) key.channel());
+			ConnectionManager.getInstance().close(
+					otherAtt.getRequest().getHost(),
+					(SocketChannel) key.channel());
 			sendMessageToClient(att);
 			break;
 		case UNFINISHED:
+			att.clearBuffer();
 			key.interestOps(SelectionKey.OP_READ);
 			break;
 		case ERROR:
@@ -230,7 +252,7 @@ public class HttpHandler implements TCPProtocol {
 			AttachmentProxy oppositeAtt = (AttachmentProxy) (AttachmentProxy) att
 					.getOppositeKey().attachment();
 			HttpResponse response = att.getResponse();
-//			response.setBody(att.getParser().getBuffer());
+			// response.setBody(att.getParser().getBuffer());
 			oppositeAtt.setBuff(response.getStream());
 			metricManager.addStatusCode(response.getStatusCode());
 			att.getOppositeKey().interestOps(SelectionKey.OP_WRITE);

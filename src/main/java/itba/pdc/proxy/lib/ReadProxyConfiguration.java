@@ -17,17 +17,30 @@ public class ReadProxyConfiguration {
 	private Properties prop;
 	private Map<String, String> data;
 	
-	private ReadProxyConfiguration() throws FileNotFoundException, IOException {
+	private ReadProxyConfiguration() {
 		if (instance != null) {
 			infoLogger.error("Instance of ReadProxyConfiguration already created");
-			throw new IllegalArgumentException("Istance already created");
+			throw new IllegalArgumentException("Instance already created");
 		}
 		prop = new Properties();
 		data = new HashMap<String,String>();
-		prop.load(new FileInputStream("src/main/resources/proxy.properties"));
+		try {
+			prop.load(new FileInputStream("src/main/resources/proxy.properties"));
+		} catch (FileNotFoundException e) {
+			try {
+				prop.load(new FileInputStream(
+						"classes/proxy.properties"));
+			} catch (FileNotFoundException e1) {
+				throw new RuntimeException("File proxy.properties not found");
+			} catch (IOException e1) {
+				throw new RuntimeException("File proxy.properties couldn't be opened");
+			}
+		} catch (IOException e) {
+			throw new RuntimeException("File proxy.properties couldn't be opened");
+		}
 	}
 	
-	public static synchronized ReadProxyConfiguration getInstance() throws FileNotFoundException, IOException {
+	public static synchronized ReadProxyConfiguration getInstance() {
 		if (instance == null) {
 			instance = new ReadProxyConfiguration();
 		}

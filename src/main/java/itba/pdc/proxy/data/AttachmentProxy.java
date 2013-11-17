@@ -26,10 +26,12 @@ public class AttachmentProxy implements Attachment {
 	private HttpParser parser;
 	private HttpRequest request;
 	private HttpResponse response;
+	private int buffSize;
 
 	public AttachmentProxy(ProcessType processID, ProxyType proxyType, int buffSize) {
 		this.processID = processID;
 		this.proxyType = proxyType;
+		this.buffSize = buffSize;
 		this.buff = ByteBuffer.allocate(buffSize);
 		switch (processID) {
 		case SERVER:
@@ -87,5 +89,9 @@ public class AttachmentProxy implements Attachment {
 
 	public ProxyType getProxyType() {
 		return proxyType;
+	}
+
+	public void clearBuffer() {
+		this.buff = ByteBuffer.allocate(this.buffSize);
 	}
 }

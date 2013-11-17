@@ -181,6 +181,10 @@ public class HttpParserRequest implements HttpParser {
 			return ParserCode.INVALID;
 		}
 		if (!request.bodyEnable()) {
+			if(request.getMethod().equals("POST")){
+				request.setStatusRequest(StatusRequest.LENGTH_REQUIRED);
+				return ParserCode.INVALID;
+			}
 			state = ParserState.END;
 			return ParserCode.VALID;
 		} else {

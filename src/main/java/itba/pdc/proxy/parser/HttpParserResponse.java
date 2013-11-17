@@ -22,6 +22,7 @@ public class HttpParserResponse implements HttpParser {
 	private ByteBuffer buffer;
 	private boolean connectionClose = false;
 	private String method;
+	private int currentLength = 0;
 
 	public HttpParserResponse(HttpResponse response) {
 		this.response = response;
@@ -145,7 +146,7 @@ public class HttpParserResponse implements HttpParser {
 	}
 
 	private ParserCode parseData() {
-		if (method.equals("HEAD")) {
+		if (method.equals("HEAD") || response.getStatusCode().equals(204)) {
 			state = ParserState.END;
 			return ParserCode.VALID;
 		}
@@ -155,10 +156,20 @@ public class HttpParserResponse implements HttpParser {
 		} else if (response.bodyEnable()) {
 			Integer bytes = Integer.parseInt(response
 					.getHeader("content-length"));
-			if (!readBuffer(bytes)) {
-				return ParserCode.LOOP;
+			if (bytes >= 10000000) {
+				currentLength += buffer.limit();
+				ManageByteBuffer.writeToFile(buffer, response.toString());
+				buffer = ByteBuffer.allocate(0);
+				if (!readBuffer(currentLength, bytes)) {
+					return ParserCode.LOOP;
+				}
+				response.readFromFile();
+			} else {
+				if (!readBuffer(bytes)) {
+					return ParserCode.LOOP;
+				}
+				response.setBody(this.buffer);
 			}
-			response.setBody(this.buffer);
 			this.state = ParserState.END;
 			return ParserCode.VALID;
 		} else {
@@ -213,6 +224,13 @@ public class HttpParserResponse implements HttpParser {
 		return ParserCode.LOOP;
 	}
 
+	private boolean readBuffer(Integer length, Integer contentLength) {
+		if (length.equals(contentLength)) {
+			return true;
+		}
+		return false;
+	}
+	
 	private boolean readBuffer(Integer contentLength) {
 		if (this.buffer.limit() == contentLength) {
 			return true;

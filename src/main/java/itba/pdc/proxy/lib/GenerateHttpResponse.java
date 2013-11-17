@@ -9,6 +9,8 @@ import itba.pdc.proxy.model.StatusRequest;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +22,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+
+import org.apache.commons.codec.binary.Base64;
 
 public final class GenerateHttpResponse {
 
@@ -135,6 +139,7 @@ public final class GenerateHttpResponse {
 			throws IOException {
 		String firstLine = generateFirstLine(status);
 		if (firstLine == null) {
+			System.out.println("a");
 			firstLine = "\nHTTP/1.1 400 Bad Request";
 		}
 		String dataLine = generateDataFromFile(status);
@@ -169,7 +174,7 @@ public final class GenerateHttpResponse {
 		case CONFLICT:
 			return readFile("responseHtml/coflict.html");
 		case LENGTH_REQUIRED:
-			return readFile("responseHtml/lenght_required.html");
+			return readFile("responseHtml/length_required.html");
 		case METHOD_NOT_ALLOWED:
 			return readFile("responseHtml/method_not_allowed.html");
 		case VERSION_NOT_SUPPORTED:
@@ -208,6 +213,15 @@ public final class GenerateHttpResponse {
 			break;
 		case ACCESSES:
 			headers.put("Content-Type", "application/vnd.ehttp-accesses");
+			break;
+		case METHOD_NOT_ALLOWED:
+			headers.put("Allow", "GET, POST, HEAD");
+		case UNAUTHORIZED:
+//			String nonsense = Base64.encodeBase64String(headers.toString().getBytes());
+			SecureRandom random = new SecureRandom();
+			String nonsense = new BigInteger(130, random).toString(32);
+				
+			headers.put("WWW-Authenticate", "realm=\"ehttp.admin\", nonce=\"" + Base64.decodeBase64(nonsense.getBytes()).toString() + "\"");
 			break;
 
 		default:

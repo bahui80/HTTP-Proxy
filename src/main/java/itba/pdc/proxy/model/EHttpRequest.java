@@ -3,8 +3,6 @@ package itba.pdc.proxy.model;
 import itba.pdc.admin.filter.FilterStatus;
 import itba.pdc.proxy.lib.ReadProxyConfiguration;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,6 +31,7 @@ public class EHttpRequest extends HttpRequestAbstract implements HttpMessage {
 		headers.add("date");
 		headers.add("host");
 		headers.add("histogram");
+		headers.add("content-length");
 		return headers;
 	}
 
@@ -127,18 +126,13 @@ public class EHttpRequest extends HttpRequestAbstract implements HttpMessage {
 		if (authentication.length != 2) {
 			return false;
 		}
-		try {
-			ReadProxyConfiguration prop = ReadProxyConfiguration.getInstance();
-			if (!prop.getAdminUsername().equals(authentication[0].trim())
-					|| !prop.getAdminPassword()
-							.equals(authentication[1].trim())) {
-				return false;
-			}
-			return true;
-		} catch (FileNotFoundException e) {
-		} catch (IOException e) {
+		
+		ReadProxyConfiguration prop = ReadProxyConfiguration.getInstance();
+		if (!prop.getAdminUsername().equals(authentication[0].trim())
+				|| !prop.getAdminPassword()
+						.equals(authentication[1].trim())) {
+			return false;
 		}
-
-		return false;
+		return true;
 	}
 }

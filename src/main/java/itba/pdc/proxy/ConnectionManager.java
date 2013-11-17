@@ -35,7 +35,7 @@ public class ConnectionManager {
 	private int max_conns = 2;
 	private Map<String, Set<SocketChannel>> persistent_connections;
 
-	private ConnectionManager() throws FileNotFoundException, IOException {
+	private ConnectionManager() {
 		if (instance != null) {
 			connectionLogger
 					.error("Instance of ReadProxyConfiguration already created");
@@ -131,19 +131,31 @@ public class ConnectionManager {
 
 	public SocketChannel getChannel(String host, Integer port)
 			throws IOException {
-		if (chained_ip == null || chained_port == null) {
-			return persistentConnection(host, port);
+		if (this.isChainedIp()) {
+			return persistentConnection(chained_ip, chained_port);
 		}
-		return persistentConnection(chained_ip, chained_port);
+		return persistentConnection(host, port);
+	}
+	
+	public void close(SocketChannel channel) throws IOException{
+		if (channel != null) {
+			channel.close();
+		}
 	}
 
 	public void close(String host, SocketChannel channel) throws IOException {
-		Set<SocketChannel> channels = persistent_connections.get(host);
-		if (channels.size() == max_conns)
-			channel.close();
-		else
-			channels.add(channel);
-		persistent_connections.put(host, channels);
+		String to_use_host;
+		if(this.isChainedIp()){
+			to_use_host = chained_ip;
+		}else{
+			to_use_host = host;
+		}
+		Set<SocketChannel> channels = persistent_connections.get(to_use_host);
+			if (channels.size() == max_conns)
+				channel.close();
+			else
+				channels.add(channel);
+			persistent_connections.put(to_use_host, channels);
 	}
 
 	private SocketChannel persistentConnection(String host, Integer port)
@@ -178,5 +190,9 @@ public class ConnectionManager {
 		}
 		return (channel != null) ? channel : SocketChannel
 				.open(new InetSocketAddress(host, port));
+	}
+	
+	private boolean isChainedIp(){
+		return chained_ip != null && chained_port != null;
 	}
 }

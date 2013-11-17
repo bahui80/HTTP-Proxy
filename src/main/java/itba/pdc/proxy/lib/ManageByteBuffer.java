@@ -1,7 +1,16 @@
 package itba.pdc.proxy.lib;
 
+import itba.pdc.admin.MetricManager;
+import itba.pdc.admin.filter.ManageFilter;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
@@ -18,7 +27,8 @@ public final class ManageByteBuffer {
 			.getCR();
 	private static Integer lf = ReadConstantsConfiguration.getInstance()
 			.getLF();
-	private static Logger parserLogger = (Logger) LoggerFactory.getLogger("parser.log");
+	private static Logger parserLogger = (Logger) LoggerFactory
+			.getLogger("parser.log");
 
 	private ManageByteBuffer() {
 		parserLogger.error("The class ManageByteBuffer cannot be instantiated");
@@ -29,7 +39,8 @@ public final class ManageByteBuffer {
 		try {
 			return encoder.encode(CharBuffer.wrap(message));
 		} catch (Exception e) {
-			parserLogger.error("Problem encoding a string message into bytebuffer");
+			parserLogger
+					.error("Problem encoding a string message into bytebuffer");
 		}
 		return null;
 	}
@@ -41,7 +52,8 @@ public final class ManageByteBuffer {
 			data = decoder.decode(buffer).toString();
 			buffer.position(old_position);
 		} catch (Exception e) {
-			parserLogger.error("Problem decoding a bytebuffer into string message");
+			parserLogger
+					.error("Problem decoding a bytebuffer into string message");
 			return "";
 		}
 		return data;
@@ -91,6 +103,50 @@ public final class ManageByteBuffer {
 			int position = buffer.position();
 			buffer.limit(position);
 			return new String(array).trim();
+		}
+	}
+
+	public static void writeToFile(ByteBuffer buffer, String filename) {
+		try {
+			FileOutputStream fo = new FileOutputStream(filename, true);
+			FileChannel wChannel = fo.getChannel();
+
+			buffer.flip();
+			wChannel.write(buffer);
+			wChannel.close();
+			fo.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void readFromFile(SocketChannel channel, String filename) {
+		try {
+			FileInputStream fi = new FileInputStream(filename);
+			FileChannel wChannel = fi.getChannel();
+
+			ByteBuffer buffer = ByteBuffer.allocate(ReadConstantsConfiguration.getInstance().getBufferSize());
+			while (wChannel.read(buffer) != -1) {
+				ManageFilter.getInstace().doFilters(buffer);
+				buffer.flip();
+				do {
+					if (channel.isOpen() && channel.isConnected()) {
+						int bytesWritten = channel.write(buffer);
+						MetricManager.getInstance().addBytesWritten(bytesWritten);
+					} else {
+						wChannel.close();
+						fi.close();
+						return;
+					}
+				} while (buffer.hasRemaining());
+				buffer.clear();
+			}
+			wChannel.close();
+			fi.close();
+			File file = new File(filename);
+			file.delete();
+		} catch (IOException e) {
 		}
 	}
 }

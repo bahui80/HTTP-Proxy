@@ -25,9 +25,16 @@ public class ReadConstantsConfiguration {
 			prop.load(new FileInputStream(
 					"src/main/resources/constants.properties"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			try {
+				prop.load(new FileInputStream(
+						"classes/constants.properties"));
+			} catch (FileNotFoundException e1) {
+				throw new RuntimeException("File constants.properties not found");
+			} catch (IOException e1) {
+				throw new RuntimeException("File constants.properties couldn't be opened");
+			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			throw new RuntimeException("File constants.properties couldn't be opened");
 		}
 	}
 

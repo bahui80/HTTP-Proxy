@@ -15,6 +15,7 @@ public interface HttpMessage {
 	public boolean validVersion(int[] version);
 	public String getHeader(String key);
 	public String getHost();
+	public String getMethod();
 	public boolean validMethod(String method);
 	public StatusRequest getStatus();
 	public void setStatusRequest(StatusRequest status);
