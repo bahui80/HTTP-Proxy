@@ -60,8 +60,6 @@ public class HttpHandler implements TCPProtocol {
 		ByteBuffer buf = att.getBuff();
 		if (channel.isOpen() && channel.isConnected()) {
 			final long bytesRead = channel.read(buf);
-			System.out.println("Buff: " + buf);
-			System.out.println("BytesRead: " + bytesRead);
 			if (bytesRead == -1) {
 				if (att.getProcessID().equals(ProcessType.SERVER)) {
 					HttpParserResponse parser = (HttpParserResponse) att

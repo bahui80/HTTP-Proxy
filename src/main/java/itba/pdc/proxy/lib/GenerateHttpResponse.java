@@ -139,7 +139,6 @@ public final class GenerateHttpResponse {
 			throws IOException {
 		String firstLine = generateFirstLine(status);
 		if (firstLine == null) {
-			System.out.println("a");
 			firstLine = "\nHTTP/1.1 400 Bad Request";
 		}
 		String dataLine = generateDataFromFile(status);
